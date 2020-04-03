@@ -1,6 +1,6 @@
 const app = require('express')()
 const http = require('http').createServer(app)
-console.log("server is opened");
+const PORT = process.env.PORT || 1337;
 
 // 関数
 // 数字を２桁の文字列に変換
@@ -33,7 +33,7 @@ socketio.on("connection", (userSocket) => {
     } );
 
 
-    userSocket.on("send_message", (data) => {
+    userSocket.on("message", (data) => {
         console.log("Received: " + data);
         const strNow = makeTimeString( new Date() );
         const objMessage = {
@@ -45,4 +45,6 @@ socketio.on("connection", (userSocket) => {
     })
 })
 
-http.listen(process.env.PORT)
+http.listen(process.env.PORT, ()=>{
+    console.log( 'Server on port %d', PORT );
+});

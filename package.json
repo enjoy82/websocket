@@ -2,7 +2,7 @@
   "name": "webso",
   "version": "1.0.0",
   "description": "",
-  "main": "index2.js",
+  "main": "index.js",
   "dependencies": {
     "express": "^4.17.1",
     "http": "0.0.0",
@@ -15,7 +15,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon index2.js"
+    "dev": "nodemon index.js"
   },
   "keywords": [],
   "author": "",
